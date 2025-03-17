@@ -1,0 +1,33 @@
+# in the name of GOD
+import pygame as pg
+from pygame.locals import *
+import random
+
+pg.init()
+
+win = pg.display.set_mode((800, 600))
+pg.display.set_caption("Cshot")
+# bg
+white = (255, 255, 255)
+yellow = (255, 255, 0)
+cyan = (0, 255, 255)
+
+# ply 1
+blue = (255, 0, 0)
+
+# ply 2
+red = (0, 255, 0)
+
+# win.fill(white)
+for i in range(3):
+    pg.draw.circle(win, cyan, (random.randint(30, 770), random.randint(30, 570)), 30, 30)
+
+Flag = True
+while Flag:
+    for event in pg.event.get():
+        if event.type == QUIT:
+            pg.quit()
+            Flag = False
+            break
+    if Flag:
+        pg.display.update()
