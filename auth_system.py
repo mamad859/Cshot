@@ -108,7 +108,7 @@ def main_menu():
             user1 = log_in()
             if user1 not in logged_in_players:
                 logged_in_players.append(user1)
-                #print(f"✅ Login successful! Welcome {user1}! ✅")
+
         elif choice == "3":
             view_leaderboard()
         elif choice == "4":
