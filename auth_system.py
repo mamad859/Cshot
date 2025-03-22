@@ -80,19 +80,25 @@ def view_leaderboard():
 
 # Function to update the leaderboard after a game
 def update_leaderboard(winner, loser):
+    conn = sqlite3.connect("game_data.db")
+    cursor = conn.cursor()
     cursor.execute("UPDATE players SET wins = wins + 1 WHERE username=?", (winner,))
     cursor.execute("UPDATE players SET losses = losses + 1 WHERE username=?", (loser,))
     conn.commit()
+    conn.close()
 
 
 # Function to display the main menu
 def main_menu():
+    logged_in_players = []
+
     while True:
-        print("\n🎯 Shooting Game Menu 🎯")
+        print("\n🎯 Cshot Menu 🎯")
         print("1. Sign Up")
         print("2. Sign In")
         print("3. View Leaderboard")
-        print("4. Exit")
+        print("4. Start Game")
+        print("5. Exit")
 
         choice = input("Choose an option: ").strip()
 
@@ -100,14 +106,24 @@ def main_menu():
             sign_up()
         elif choice == "2":
             user1 = log_in()
-            print("Waiting for Player 2 to log in...")
-            user2 = log_in()
-            print(f"\n{user1} and {user2} are ready! Starting game...\n")
-            return user1, user2  # Start game with logged-in players
+            if user1 not in logged_in_players:
+                logged_in_players.append(user1)
+                print(f"✅ Login successful! Welcome {user1}! ✅")
+
+            # print("Waiting for Player 2 to log in...")
+            # user2 = log_in()
+            # print(f"\n{user1} and {user2} are ready! Starting game...\n")
+            # return user1, user2  # Start game with logged-in players
         elif choice == "3":
             view_leaderboard()
         elif choice == "4":
-            print("Goodbye!")
+            if len(logged_in_players) < 2:
+                print("⚠️ Two players must sign in before starting the game!️️ ⚠️")
+            else:
+                print(f"\n🎮 Starting game for {logged_in_players[0]} and {logged_in_players[1]}...")
+                return logged_in_players[0], logged_in_players[1]
+        elif choice == "5":
+            print("👋 Goodbye!👋")
             conn.close()
             exit()
         else:
@@ -118,4 +134,5 @@ def start_game():
     return main_menu()
 
 if __name__ == "__main__":
-    player1, player2 = main_menu()
+    while True:
+        player1, player2 = main_menu()
