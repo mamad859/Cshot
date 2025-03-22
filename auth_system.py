@@ -56,7 +56,7 @@ def log_in():
         user = cursor.fetchone()
 
         if user:
-            print(f"Login successful! Welcome, {username}!")
+            print(f"✅Login successful! Welcome, {username}!✅")
             return username  # Return username for session tracking
         else:
             print("Invalid credentials. Try again.")
@@ -107,13 +107,9 @@ def main_menu():
         elif choice == "2":
             user1 = log_in()
             if user1 not in logged_in_players:
-                logged_in_players.append(user1)
-                print(f"✅ Login successful! Welcome {user1}! ✅")
 
-            # print("Waiting for Player 2 to log in...")
-            # user2 = log_in()
-            # print(f"\n{user1} and {user2} are ready! Starting game...\n")
-            # return user1, user2  # Start game with logged-in players
+                logged_in_players.append(user1)
+
         elif choice == "3":
             view_leaderboard()
         elif choice == "4":
