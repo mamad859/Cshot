@@ -107,7 +107,7 @@ def main_menu():
         elif choice == "2":
             user1 = log_in()
             if user1 not in logged_in_players:
-                print(f"✅Login successful! Welcome, {user1}!✅")
+                #print(f"✅Login successful! Welcome, {user1}!✅")
                 logged_in_players.append(user1)
 
         elif choice == "3":
