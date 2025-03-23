@@ -93,7 +93,7 @@ def main_menu():
     logged_in_players = []
 
     while True:
-        print("\n🎯 Cshot Menu 🎯")
+        print("\n🎯 C-shot Menu 🎯")
         print("1. Sign Up")
         print("2. Sign In")
         print("3. View Leaderboard")
