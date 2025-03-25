@@ -32,11 +32,39 @@ def display_score(screen, player, x, y):
     screen.blit(text2, (x, y + 20))
 
 def display_result(screen, player1, player2):
-    font = pg.font.SysFont('calibri', 35)
+    title_font = pg.font.SysFont('Arial', 40, bold=True)
+    score_font = pg.font.SysFont('Calibri', 35)
+    winner_color = (50, 150, 255)
+    draw_color = (255, 70, 70)
+    text_shadow = (20, 20, 20)
+    
     if player1.score > player2.score:
-        result_text = font.render(f"Congrats, {player1.name} is the winner!", True, blue)
+        winner_text = f"Winner: {player1.name}!"
+        result_text = f"Congratulation!"
     elif player2.score > player1.score:
-        result_text = font.render(f"Congrats, {player2.name} is the winner!", True, blue)
+        winner_text = f"Winner: {player2.name}!"
+        result_text = f"Congratulation!"
     else:
-        result_text = font.render("...Draw...", True, red)
-    screen.blit(result_text , (250 , 270))
+        winner_text = "Tie!"
+        result_text = "It was a good game!"
+    
+    title_surface = title_font.render(winner_text, True, winner_color if winner_text != "Tie!" else draw_color)
+    subtitle_surface = score_font.render(result_text, True, (240, 240, 240))  # سفید روشن
+    
+    title_shadow = title_font.render(winner_text, True, text_shadow)
+    subtitle_shadow = score_font.render(result_text, True, text_shadow)
+    
+    title_rect = title_surface.get_rect(center=(screen.get_width()//2, 250))
+    subtitle_rect = subtitle_surface.get_rect(center=(screen.get_width()//2, 300))
+    
+    screen.blit(title_shadow, (title_rect.x+2, title_rect.y+2))
+    screen.blit(subtitle_shadow, (subtitle_rect.x+2, subtitle_rect.y+2))
+    
+    screen.blit(title_surface, title_rect)
+    screen.blit(subtitle_surface, subtitle_rect)
+    
+    score_text = f"{player1.score} - {player2.score}"
+    score_surface = title_font.render(score_text, True, (255, 255, 255))
+    score_rect = score_surface.get_rect(center=(screen.get_width()//2, 200))
+    screen.blit(score_surface, score_rect)
+
