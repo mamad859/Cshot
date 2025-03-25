@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ab3c9ef-4ec6-4695-9b52-1eb08e7de7c6" name="Changes" comment="" />
+
+    <list default="true" id="9ab3c9ef-4ec6-4695-9b52-1eb08e7de7c6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+    </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,26 +18,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mamad859"
+
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mamad859&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mamad859/Cshot.git",
-    "accountId": "f6975ad9-4527-4b0b-a428-73922f21c931"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mamad859/Cshot.git&quot;,
+    &quot;accountId&quot;: &quot;f6975ad9-4527-4b0b-a428-73922f21c931&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+
   <component name="ProjectId" id="2ucjUWHsxpnScXygMOuySNYnwCZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -47,6 +55,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,6 +73,9 @@
       <option name="presentableId" value="Default" />
       <updated>1742554772900</updated>
       <workItem from="1742554774308" duration="9078000" />
+
+      <workItem from="1742887019247" duration="714000" />
+
     </task>
     <servers />
   </component>
