@@ -19,17 +19,23 @@ timer = pg.transform.scale(timer, (60, 60))
 bullet = pg.image.load("bullet.png")
 bullet = pg.transform.scale(bullet, (60, 60))
 
-def display_time(screen, time_left, x, y, color):
-    font = pg.font.SysFont('calibri', 25)
-    text = font.render(f"Time : {int(time_left)}s", True, color)
-    screen.blit(text, (x, y))
+def display_time(screen, remaining_time, pos_x, pos_y, color):
+    time_font = pg.font.SysFont('Bauhaus 93', 30)
+    # time_font = pg.font.SysFont('Arial Black', 28)
+    
+    time_text = time_font.render(f"TIME: {int(remaining_time)}s", True, color)
+    screen.blit(time_text, (pos_x, pos_y))
 
-def display_score(screen, player, x, y):
-    font = pg.font.SysFont('calibri' , 20)
-    text = font.render(f"{player.name} scores : {player.score}", True, blue)
-    text2 = font.render(f"remaining bullets : {player.bullet}", True, red)
-    screen.blit(text, (x, y))
-    screen.blit(text2, (x, y + 20))
+def display_score(screen, player, pos_x, pos_y):
+    score_font = pg.font.SysFont('Orbitron', 22)
+    # score_font = pg.font.SysFont('Verdana', 20)
+    
+    score_text = score_font.render(f"{player.name.upper()}: {player.score} PTS", True, blue)
+    
+    bullets_text = score_font.render(f"AMMO: {player.bullet}", True, red)
+    
+    screen.blit(score_text, (pos_x, pos_y))
+    screen.blit(bullets_text, (pos_x, pos_y + 25))
 
 def display_result(screen, player1, player2):
     title_font = pg.font.SysFont('Arial', 40, bold=True)
