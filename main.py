@@ -121,8 +121,7 @@ if __name__ == "__main__" :
 
     player1 = Player(random.randint(10, 790), random.randint(10, 590))
     player2 = Player(random.randint(10, 790), random.randint(10, 590))
-    # player1_name,player2_name = aut.start_game()
-    player1_name, player2_name = "rasool", "mamad"
+    player1_name,player2_name = aut.start_game()
     player1.name = player1_name ; player2.name = player2_name
     points = []
     clock = pg.time.Clock()
