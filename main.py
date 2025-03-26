@@ -7,20 +7,20 @@ from pygameCshot import *
 
 def shooting(player):
     if sable1.check_hit(player.x, player.y, 1):
-        player.score = sable1.action(player.score)
+        player.score = sable1.apply_effect(player.score)
     if sable2.check_hit(player.x, player.y, 2):
-        player.score = sable2.action(player.score)
+        player.score = sable2.apply_effect(player.score)
     if sable3.check_hit(player.x, player.y, 3):
-        player.score = sable3.action(player.score)
+        player.score = sable3.apply_effect(player.score)
     if bomb1.check_hit(player.x, player.y, 4):
-        player.score = bomb1.action(player.score)
+        player.score = bomb1.apply_effect(player.score)
     if speed.check_hit(player.x, player.y, 5):
-        player.speed = speed.action(player.speed)
+        player.speed = speed.apply_effect(player.speed)
     if time1.check_hit(player.x, player.y, 6):
-        player.time = time1.action(player.time)
+        player.time = time1.apply_effect(player.time)
     if bullet1.check_hit(player.x, player.y, 7):
-        player.bullet = bullet1.action(player.bullet)
-
+        player.bullet = bullet1.apply_effect(player.bullet)
+        
 def main_game(player1_name, player2_name):
     pg.init()
     pg.mixer.init()
