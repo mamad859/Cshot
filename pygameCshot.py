@@ -19,23 +19,27 @@ timer = pg.transform.scale(timer, (60, 60))
 bullet = pg.image.load("bullet.png")
 bullet = pg.transform.scale(bullet, (60, 60))
 
-def display_time(screen, remaining_time, pos_x, pos_y, color):
+def display_time(screen, ply1_time, ply2_time):
     time_font = pg.font.SysFont('Bauhaus 93', 30)
-    # time_font = pg.font.SysFont('Arial Black', 28)
-    
-    time_text = time_font.render(f"TIME: {int(remaining_time)}s", True, color)
-    screen.blit(time_text, (pos_x, pos_y))
+    time_text = time_font.render(f"TIME: {int(ply1_time)}s", True, purple)
+    screen.blit(time_text, (5, 60))
 
-def display_score(screen, player, pos_x, pos_y):
+    time_text = time_font.render(f"TIME: {int(ply2_time)}s", True, purple)
+    screen.blit(time_text, (630, 60))
+
+def display_score(screen, ply1, ply2):
     score_font = pg.font.SysFont('Orbitron', 22)
     # score_font = pg.font.SysFont('Verdana', 20)
     
-    score_text = score_font.render(f"{player.name.upper()}: {player.score} PTS", True, blue)
-    
-    bullets_text = score_font.render(f"AMMO: {player.bullet}", True, red)
-    
-    screen.blit(score_text, (pos_x, pos_y))
-    screen.blit(bullets_text, (pos_x, pos_y + 25))
+    score_text = score_font.render(f"{ply1.name.upper()}: {ply1.score} PTS", True, blue)
+    bullets_text = score_font.render(f"AMMO: {ply1.bullet}", True, red)
+    screen.blit(score_text, (5, 10))
+    screen.blit(bullets_text, (5, 35))
+
+    score_text = score_font.render(f"{ply2.name.upper()}: {ply2.score} PTS", True, blue)
+    bullets_text = score_font.render(f"AMMO: {ply2.bullet}", True, red)
+    screen.blit(score_text, (630, 10))
+    screen.blit(bullets_text, (630, 35))
 
 def display_result(screen, player1, player2):
     title_font = pg.font.SysFont('Arial', 40, bold=True)
@@ -53,10 +57,9 @@ def display_result(screen, player1, player2):
     else:
         winner_text = "Tie!"
         result_text = "It was a good game!"
-    
     title_surface = title_font.render(winner_text, True, winner_color if winner_text != "Tie!" else draw_color)
     subtitle_surface = score_font.render(result_text, True, (240, 240, 240))
-    
+
     title_shadow = title_font.render(winner_text, True, text_shadow)
     subtitle_shadow = score_font.render(result_text, True, text_shadow)
     
@@ -73,4 +76,3 @@ def display_result(screen, player1, player2):
     score_surface = title_font.render(score_text, True, (255, 255, 255))
     score_rect = score_surface.get_rect(center=(screen.get_width()//2, 200))
     screen.blit(score_surface, score_rect)
-
