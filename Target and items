@@ -19,23 +19,23 @@ class Target:
             return True
         
 class Sable(Target):
-    def action(self, score):
+    def apply_effect(self, score):
         return score + 1
     
 class Speed(Target):
-    def action(self, speed):
+    def apply_effect(self, speed):
         return speed + 5
 
 class Bomb(Target):
-    def action(self, score):
+    def apply_effect(self, score):
         return score - 3
     
 class Bullet(Target):
-    def action(self, bullet):
+    def apply_effect(self, bullet):
         return bullet + 5
     
 class Time(Target):
-    def action(self, time):
+    def apply_effect(self, time):
         return time + 10
     
 class Player:
