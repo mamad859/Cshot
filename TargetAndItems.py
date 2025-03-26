@@ -9,13 +9,13 @@ targets = [randpos() for _ in range(7)]
 
 class Target:
     def __init__(self, type, radius):
-        self.x = targets[type - 1][0]
-        self.y = targets[type - 1][1]
+        self.x = targets[type][0]
+        self.y = targets[type][1]
         self.radius = radius
     def check_hit(self, x_pos, y_pos, tar_num):
         if (self.radius + 5)**2 >= (x_pos - self.x - self.radius)**2 + (y_pos - self.y - self.radius)**2:
             global targets
-            targets[tar_num - 1] = randpos()
+            targets[tar_num] = randpos()
             return True
         
 class Sable(Target):
@@ -46,4 +46,3 @@ class Player:
         self.score = 0
         self.time = 75
         self.speed = 20
-        self.name = ""
