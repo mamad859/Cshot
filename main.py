@@ -2,7 +2,7 @@ import pygame as pg
 import random
 from pygame.locals import *
 import auth_system as aut
-from classes import *
+from TargetAndItems import *
 from pygameCshot import *
 
 def shooting(player):
