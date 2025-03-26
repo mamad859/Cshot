@@ -45,17 +45,17 @@ def display_result(screen, player1, player2):
     text_shadow = (20, 20, 20)
     
     if player1.score > player2.score:
-        winner_text = f"Winner: {player1.name}!"
+        winner_text = f"{player1.name} win!!!"
         result_text = f"Congratulation!"
     elif player2.score > player1.score:
-        winner_text = f"Winner: {player2.name}!"
+        winner_text = f"{player2.name} win!!!"
         result_text = f"Congratulation!"
     else:
         winner_text = "Tie!"
         result_text = "It was a good game!"
     
     title_surface = title_font.render(winner_text, True, winner_color if winner_text != "Tie!" else draw_color)
-    subtitle_surface = score_font.render(result_text, True, (240, 240, 240))  # سفید روشن
+    subtitle_surface = score_font.render(result_text, True, (240, 240, 240))
     
     title_shadow = title_font.render(winner_text, True, text_shadow)
     subtitle_shadow = score_font.render(result_text, True, text_shadow)
